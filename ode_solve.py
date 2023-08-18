@@ -1,6 +1,6 @@
-from IntegratorFactory import IntegratorFactory
 from ModelFactory import ModelFactory
 from PlotFactory import PlotFactory
+from IntegratorFactory import IntegratorFactory
 
 import numpy as np
 # import sys
