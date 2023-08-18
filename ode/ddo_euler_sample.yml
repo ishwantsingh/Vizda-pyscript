@@ -1,0 +1,19 @@
+model:
+  name: ddo
+  params:
+    omega0: 0.5
+    beta: 0.25
+    omega: 0.5
+    F: 1.0
+integrator:
+  name: rungeKutta
+  dt: 0.9424777960769379 # 2pi/20
+data:
+  ICs:
+    t: 0.0
+    x: 0.0
+    v: 0.0
+  # number of steps
+  N: 20 # so 20+1 lines of data in output, incl. ICs
+plot:
+  name: lineGraph

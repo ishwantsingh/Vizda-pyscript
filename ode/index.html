@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+        <py-env>
+            - matplotlib
+            - pandas
+            - plotly
+        </py-env>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Weather Data</h1>
+            <p class="lead">
+                Some graphs about the weather in London in 2020
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 p-2 ml-4 mb-1">
+                <button type="button" class="btn btn-secondary">Select chart from list:</button>
+            </div>
+            <div class="col-sm-4 p-2 mr-4 mb-1">
+                <select class="form-control" id="select">
+                    <option value="Tmax">Maximum Temperature</option>
+                    <option value="Tmin">Minimum Temperature</option>
+                    <option value="Sun">Sun</option>
+                    <option value="Rain">Rain</option>        
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 p-2 shadow ml-4 mr-4 mb-4 bg-white rounded">
+                <div id="chart1"></div>
+            </div>
+        </div>
+        <script type='text/javascript'>
+            function plot(graph, chart) {
+                var figure = JSON.parse(graph)
+                Plotly.newPlot(chart, figure, {});
+            }
+        </script>
+    
+    <py-script src="./ode_solve.py"></py-script>
+
+    
+    <!-- <py-tutor modules="antigravity.py">
+        <section class="pyscript">
+            <py-config>
+                plugins = [
+                  "https://pyscript.net/latest/plugins/python/py_tutor.py"
+                ]
+                [[fetch]]
+                files = ["./antigravity.py"]
+            </py-config>
+            <b>Based on xkcd: antigravity https://xkcd.com/353/.</b>
+            <py-script>
+                import antigravity
+                antigravity.fly()
+            </py-script>
+        </section>
+    </py-tutor> -->
+
+    </body>
+</html>
